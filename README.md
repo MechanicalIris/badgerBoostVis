@@ -22,3 +22,5 @@ re
 datetime
 
 natsort
+
+This was written using the Spyder IDE (Python 3.7)
