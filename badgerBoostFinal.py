@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-#TODO: Change legend font to larger one
-#Change output to mp4
-#Adjust for database download + implement time display
-#Order of read in may have to be ammended for this
 """
 Created on Thu Sep  2 10:23:51 2021
 @author: Robin
@@ -31,7 +27,7 @@ def numericalSort(value):
     parts = numbers.split(value)
     parts[1::2] = map(int, parts[1::2])
     return parts
-#NOTE: Must think about file naming and how it reads in files sequentially
+
 directory = 'C:\\Users\\Robin\\Desktop\\BBFinal'
 
 for filename in os.listdir(directory):
@@ -41,13 +37,11 @@ for filename in os.listdir(directory):
             data2 = json.load(readIn)
         uD2 = data2['userData'].keys()
         for i in uD2:
-    #print(data2['userData'][i].keys())
             if "nonNativeBalance" in data2['userData'][i]:
                 counter+=1
                 files.append(f)
                 #print(os.path.basename(f))
                 break
-        
 files = natsorted(files, key=lambda y: y.lower())
 #print(files)
 #from sklearn.cluster import AgglomerativeClustering
